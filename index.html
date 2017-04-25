@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Who's Streaming</title>
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    	<link rel="stylesheet" href="resources/css/main.css">
+	</head>
+
+	<body>
+		<nav class="navbar" style="background-color: #512da8;">
+			<a class="navbar-brand text-center" style="color: white; font-family: Oswald"><h2>Who's Streaming</h2></a>
+		</nav>
+
+		<div class="container-fluid text-center">
+
+
+			<!-- Stream Card Holder -->
+			<div class="container">
+				<div class="row">
+				</div>
+			</div>
+			<!-- End Card Holder -->
+
+			<input type="button" value="Add new channel" class="btn btn-primary" id="new" style="background-color: #673ab7; border-color: #673ab7;"></input>
+
+			<!-- Input Modal For Adding Stream -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Add a new stream</h5>
+			      </div>
+			      <div class="modal-body">
+			      	<p>Add stream name, as in http://twitch.tv/<strong>destiny</strong></p>
+			      	<input type="text" placeholder="Enter a stream name" class="form-control" id="stream-add">
+			      </div>
+			      <div class="modal-footer">
+			      	<input type="button" value="Add" class="btn btn-primary" id="add" style="background-color: #673ab7; border-color: #673ab7;"></input>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!-- End Modal -->
+			<div id="footer">
+				<h5 class="text-center">Website by <a href="https://github.com/daniel75027" target="_blank">Daniel Serratore</a></h5>
+			</div>
+
+		</div>
+
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    	<script src="resources/js/main.js"></script>
+	</body>
+</html>

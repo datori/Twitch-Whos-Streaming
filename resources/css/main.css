@@ -1,0 +1,60 @@
+body{
+	background-color: rgb(30,30,30);
+}
+h1{
+	margin: 15px;
+}
+h3,p{
+	color: rgb(240,240,240);
+}
+.modal-body > p{
+	color: black;
+}
+.container{
+	width: 75%;
+}
+.card{
+	height: 190px;
+	margin: 20px 0;
+	border-color: #512da8;
+}
+.card:hover{
+	border-color: rgb(48,25,100);
+}
+.card-top{
+	position: absolute;
+}
+.card-subtitle{
+	font-size: 90%;
+}
+.title{
+	left: 20px;
+}
+.subtitle{
+	max-width: 50%;
+	top: 35%;
+	left: 20px;
+
+}
+.card-block:hover{
+	background-color: rgba(48,25,100,0.77) !important;
+}
+.card-block > p{
+	position: absolute;
+	bottom: 0px;
+	left: 2%;
+}
+#offline{
+	margin: auto;
+	font-size: 120%;
+}
+#footer{
+	margin: 5%;
+}
+#footer > h5{
+	font-size: 120%;
+	color: rgba(200,200,200,0.5);
+}
+#footer > h5 > a{
+	color: #512da8;
+}
