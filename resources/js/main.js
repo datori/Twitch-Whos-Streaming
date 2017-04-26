@@ -7,7 +7,6 @@ $(document).ready(function(){
 	}
 
 	// Default streams.
-	getData("destiny");
 	getData("monstercat");
 	getData("1234567890123456789012");
 
@@ -91,12 +90,10 @@ function setPage(stream){
 	if (stream.status == "online"){
 		$(".row").append(`
 			<div class="col-lg-4">
-				<div class="card" style="background-image: url(${stream.preview}); background-size: cover;" onclick="parent.open('http://twitch.tv/${stream.name}')">
+				<div class="card" style="background-image: url(${stream.preview}); background-size: cover;" onclick="parent.open('http://twitch.tv/${stream.user}')">
 					<div class="card-block" style="background-color: rgba(103,58,183,0.5);"> 
-						<div class="card-top title">
-							<h3 class="card-title text-left">${stream.user}</h3>
-						</div>
-						<div class="card-top subtitle">
+						<h3 class="card-title text-left">${stream.user}</h3>
+						<div>
 							<p class="card-subtitle text-left"><strong>Viewers</strong>: ${stream.viewers}</p>
 							<p class="card-subtitle text-left"><strong>Game</strong>: ${stream.game}</p>
 						</div>
@@ -109,7 +106,7 @@ function setPage(stream){
 		$(".row").append(`
 			<div class="col-lg-4">
 				<div class="card">
-					<div class="card-block" style="background-color: rgb(50,50,50);">
+					<div class="card-block" style="background-color: rgb(50,50,50);" onclick="parent.open('http://twitch.tv/${stream.user}')">
 						<h3 class="card-title text-left">${stream.user}</h3>
 						<p id="offline"><strong>Offline</strong></p>
 					</div>

@@ -7,12 +7,20 @@ h1{
 h3,p{
 	color: rgb(240,240,240);
 }
-.modal-body > p{
-	color: black;
+i {
+	color: #512da8;
 }
+
+
+/* <-- CONTAINERS --> */
 .container{
 	width: 75%;
 }
+.modal-body > p{
+	color: black;
+}
+
+/* <-- CARDS --> */
 .card{
 	height: 190px;
 	margin: 20px 0;
@@ -21,33 +29,23 @@ h3,p{
 .card:hover{
 	border-color: rgb(48,25,100);
 }
-.card-top{
-	position: absolute;
-}
-.card-subtitle{
-	font-size: 90%;
-}
-.title{
-	left: 20px;
-}
-.subtitle{
-	max-width: 50%;
-	top: 35%;
-	left: 20px;
 
-}
-.card-block:hover{
-	background-color: rgba(48,25,100,0.77) !important;
-}
 .card-block > p{
 	position: absolute;
 	bottom: 0px;
 	left: 2%;
 }
+.card-block:hover{
+	background-color: rgba(48,25,100,0.77) !important;
+}
+
+/* CARD STATUS */
 #offline{
 	margin: auto;
 	font-size: 120%;
 }
+
+/* <-- FOOTER --> */
 #footer{
 	margin: 5%;
 }
