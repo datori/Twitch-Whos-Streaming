@@ -6,6 +6,7 @@ h1{
 }
 h3,p{
 	color: rgb(240,240,240);
+	word-wrap: break-word;
 }
 i {
 	color: #512da8;
@@ -14,8 +15,15 @@ i {
 
 /* <-- CONTAINERS --> */
 .container{
-	width: 75%;
+	width: 100%;
 }
+
+@media (min-width: 1650px) {
+	.container{
+    	width: 75%;
+	}
+}
+
 .modal-body > p{
 	color: black;
 }

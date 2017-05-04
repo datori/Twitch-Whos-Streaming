@@ -24,7 +24,7 @@ $(document).ready(function(){
 		// Iterate through offline and not-found streams.
 		streams.forEach(function(stream){
 			if (stream.status != "online"){
-				checkExistance(stream);
+				checkExistence(stream);
 			}
 		});
 
@@ -108,7 +108,7 @@ function checkStatus(name){
 	}));
 }
 
-function checkExistance(stream){
+function checkExistence(stream){
 	endpoint = `https://wind-bow.glitch.me/twitch-api/channels/`; // Twitch API bypass endpoint for channel data.
 	var url = `${endpoint}${stream.user}?callback=?`; // URL query.
 
@@ -125,8 +125,8 @@ function checkExistance(stream){
 function setPage(stream){
 	if (stream.status == "online"){
 		$(".row").append(`
-			<div class="col-lg-4">
-				<div class="card" style="background-image: url(${stream.preview}); background-size: cover;" onclick="parent.open('http://twitch.tv/${stream.user}')">
+			<div class="col-xl-4 col-md-6">
+				<div class="card" style="background-image: url(${stream.preview}); background-size: 100% 100%;" onclick="parent.open('http://twitch.tv/${stream.user}')">
 					<div class="card-block" style="background-color: rgba(103,58,183,0.5);"> 
 						<h3 class="card-title text-left">${stream.user}</h3>
 						<div>
@@ -140,7 +140,7 @@ function setPage(stream){
 	}
 	else if (stream.status == "offline"){
 		$(".row").append(`
-			<div class="col-lg-4">
+			<div class="col-xl-4 col-md-6">
 				<div class="card">
 					<div class="card-block" style="background-color: rgb(50,50,50);" onclick="parent.open('http://twitch.tv/${stream.user}')">
 						<h3 class="card-title text-left">${stream.user}</h3>
@@ -151,9 +151,9 @@ function setPage(stream){
 	}
 	else{
 		$(".row").append(`
-			<div class="col-lg-4">
+			<div class="col-xl-4 col-md-6">
 				<div class="card">
-					<div class="card-block" style="background-color: rgb(50,50,50); background-image: url(resources/imgs/notfound.png); background-size: cover;" onclick="parent.open('http://twitch.tv/${stream.user}')">
+					<div class="card-block" style="background-color: rgb(50,50,50); background-image: url(resources/imgs/notfound.png); background-size: 100% 100%;" onclick="parent.open('http://twitch.tv/${stream.user}')">
 						<h3 class="card-title text-left">${stream.user}</h3>
 						<p id="offline"><strong>Not Found</strong></p>
 					</div>
