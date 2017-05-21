@@ -6,11 +6,7 @@ $(document).ready(function(){
 	for (var i = 0; i < localStorage.length; i++){
 		checkStatus(localStorage.key(i));
 	}
-	// Default streams.
-	checkStatus("monstercat");
-	checkStatus("1234567890123456789012");
-
-
+	
 	// <-- PROMISE RESOLUTION HANDLER -->
 	// When all requests resolve, add online streams first, then offline streams.
 	$.when.apply($, statusPromises).done(function(){
@@ -42,15 +38,21 @@ $(document).ready(function(){
 					setPage(stream);
 				}
 			});
+
+			// When all cards are added, bind the click event.
+			$(".remove-stream").on('click', function(e){
+				$(this).closest('.col-xl-4').remove();
+				localStorage.removeItem($(this).siblings('h3').text());
+				e.stopPropagation();
+			});
 		});
 	});
 	// <-- END PROMISE RESOLUTION HANDLER -->
 
-
 	// <-- EVENT HANDLERS -->
 	// "Add stream" button on page.
 	$("#new").on("click", function(){
-		$("#myModal").modal('show');
+		$("#addModal").modal('show');
 	});
 
 	// "Add" button on modal.
@@ -64,7 +66,7 @@ $(document).ready(function(){
 
 		// Clean.
 		$("#stream-add").val("");
-		$("#myModal").modal('hide');
+		$("#addModal").modal('hide');
 	});
 
 	// Submit search on 'enter' press.
@@ -79,10 +81,9 @@ $(document).ready(function(){
 
 		// Clean.
 		$(this).val("");
-		$("#myModal").modal('hide');
+		$("#addModal").modal('hide');
 		}
 	});
-	// <-- END EVENT HANDLERS -->
 });
 
 function checkStatus(name){
@@ -134,6 +135,7 @@ function setPage(stream){
 							<p class="card-subtitle text-left"><strong>Game</strong>: ${stream.game}</p>
 						</div>
 						<p><strong>Streaming: </strong>${stream.title}</p>
+						<a class="remove-stream"><i class="fa fa-times"></i></a>
 					</div>
 				</div>
 			</div>`);
@@ -141,10 +143,11 @@ function setPage(stream){
 	else if (stream.status == "offline"){
 		$(".row").append(`
 			<div class="col-xl-4 col-md-6">
-				<div class="card">
-					<div class="card-block" style="background-color: rgb(50,50,50);" onclick="parent.open('http://twitch.tv/${stream.user}')">
+				<div class="card" style="background-color: rgb(50,50,50);">
+					<div class="card-block" onclick="parent.open('http://twitch.tv/${stream.user}')">
 						<h3 class="card-title text-left">${stream.user}</h3>
 						<p id="offline"><strong>Offline</strong></p>
+						<a class="remove-stream"><i class="fa fa-times"></i></a>
 					</div>
 				</div>
 			</div>`);
@@ -152,10 +155,11 @@ function setPage(stream){
 	else{
 		$(".row").append(`
 			<div class="col-xl-4 col-md-6">
-				<div class="card">
-					<div class="card-block" style="background-color: rgb(50,50,50); background-image: url(resources/imgs/notfound.png); background-size: 100% 100%;" onclick="parent.open('http://twitch.tv/${stream.user}')">
+				<div class="card" style="background-image: url(resources/imgs/notfound.png); background-size: 100% 100%;">
+					<div class="card-block" onclick="parent.open('http://twitch.tv/${stream.user}')">
 						<h3 class="card-title text-left">${stream.user}</h3>
 						<p id="offline"><strong>Not Found</strong></p>
+						<a class="remove-stream"><i class="fa fa-times"></i></a>
 					</div>
 				</div>
 			</div>`);

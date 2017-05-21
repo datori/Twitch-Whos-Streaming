@@ -9,29 +9,35 @@ h3,p{
 	word-wrap: break-word;
 }
 i {
-	color: #512da8;
+	color: black;
 }
-
+#new{
+	margin: 30px auto;
+}
+.fa-times{
+	color: red;
+}
+hr{
+	width: 100%;
+	background-color: rgb(40,40,40);
+}
 
 /* <-- CONTAINERS --> */
 .container{
+	padding: 0px !important;
 	width: 100%;
 }
-
-@media (min-width: 1650px) {
-	.container{
-    	width: 75%;
-	}
+#cardholder{
+	max-width: 1600px;
 }
-
 .modal-body > p{
 	color: black;
 }
 
 /* <-- CARDS --> */
 .card{
-	height: 190px;
-	margin: 20px 0;
+	height: 210px;
+	margin: 12px 0;
 	border-color: #512da8;
 }
 .card:hover{
@@ -46,6 +52,18 @@ i {
 .card-block:hover{
 	background-color: rgba(48,25,100,0.77) !important;
 }
+.remove-stream{
+	position: absolute;
+ 	bottom: 10px;
+ 	right: 10px;
+	padding: 5px 14px;
+	opacity: 0;
+	background-color: rgb(30,30,30);
+	border-radius: 5px;
+}
+.card-block:hover .remove-stream{
+	opacity: 0.8;
+}
 
 /* CARD STATUS */
 #offline{
@@ -55,7 +73,7 @@ i {
 
 /* <-- FOOTER --> */
 #footer{
-	margin: 5%;
+	width: 100%;
 }
 #footer > h5{
 	font-size: 120%;
