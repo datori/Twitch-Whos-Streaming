@@ -10,16 +10,12 @@ $(document).ready(function(){
 	// <-- PROMISE RESOLUTION HANDLER -->
 	// When all requests resolve, add online streams first, then offline streams.
 	$.when.apply($, statusPromises).done(function(){
-		// INEFFICIENT
 		// Iterate through online streams.
 		streams.forEach(function(stream){
 			if (stream.status == "online"){
 				setPage(stream);
 			}
-		});
-		// Iterate through offline and not-found streams.
-		streams.forEach(function(stream){
-			if (stream.status != "online"){
+			else{
 				checkExistence(stream);
 			}
 		});
